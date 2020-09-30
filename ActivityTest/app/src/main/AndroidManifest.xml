@@ -8,8 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--singleTop mode, if the top activity try to create itself, it will fail -->
+        <!--singleTask guarantees that there is only an object of an activity within the application process-->
+        <!--singleInstance creates an independent stack to manage the activity, which solves the
+        problem of activity sharing-->
         <activity
             android:name=".FirstActivity"
+            android:launchMode="singleTask"
             android:label="This is FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

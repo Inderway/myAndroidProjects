@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.activitylifecycletest">
+    package="com.example.uiwidgettest">
 
     <application
         android:allowBackup="true"
@@ -11,14 +11,9 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".NormalActivity" >
-        </activity>
-        <!--Attribute theme means the theme(主题) of current activity-->
-        <activity android:name=".DialogActivity"
-            android:theme="@android:style/Theme.Dialog">
         </activity>
     </application>
 

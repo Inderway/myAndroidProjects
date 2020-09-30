@@ -11,20 +11,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("FirstActivity","Task id is "+getTaskId());
         setContentView(R.layout.first_layout);
         //toast on button
         Button button1=(Button)findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent=new Intent(FirstActivity.this,SecondActivity.class);
-                //the second parameter is a request code, which should be a unique value
-                startActivityForResult(intent,1);
+                SecondActivity.actionStart(FirstActivity.this,"data1","data2");
+
+//9 P66                //learn standard mode
+//                Intent intent=new Intent (FirstActivity.this, FirstActivity.class);
+//                startActivity(intent);
+
+//8                Intent intent=new Intent(FirstActivity.this,SecondActivity.class);
+//                //the second parameter is a request code, which should be a unique value
+//                startActivityForResult(intent,1);
 
 //7                //pass data to next activity
 //                String data="Hello SecondActivity";
@@ -59,6 +66,12 @@ public class FirstActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("FirstActivity","onRestart");
     }
 
     @Override
