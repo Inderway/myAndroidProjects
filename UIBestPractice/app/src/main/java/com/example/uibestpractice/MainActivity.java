@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView msgRecyclerView;
     private MsgAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         msgList.add(msg2);
         Msg msg3=new Msg("Hello!33333333333333333333333333333",Msg.TYPE_RECERVED);
         msgList.add(msg3);
+        int a=10;
+
     }
 
 }
